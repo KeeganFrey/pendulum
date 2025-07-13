@@ -1,0 +1,118 @@
+<html>
+    <style>
+        #c{
+            height: 360px;
+            width: 640px;
+            border: 1px solid #000;
+        }
+        #inputDisplay {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: white;
+            width: 400px;
+            text-align: center;
+        }
+        #counterDisplay {
+            margin-top: 20px;
+            font-size: 2em; /* Make the number larger */
+            font-weight: bold;
+            color: #333;
+        }
+        #counterDisplayx {
+            margin-top: 20px;
+            font-size: 2em; /* Make the number larger */
+            font-weight: bold;
+            color: #333;
+        }
+        #counterDisplayy {
+            margin-top: 20px;
+            font-size: 2em; /* Make the number larger */
+            font-weight: bold;
+            color: #333;
+        }
+        #counterDisplayz {
+            margin-top: 20px;
+            font-size: 2em; /* Make the number larger */
+            font-weight: bold;
+            color: #333;
+        }
+        #toggleButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        #toggleButton.off {
+            background-color: #f44336; /* Red */
+        }
+        #statusDisplay {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        /* Add this to your existing CSS */
+        .key-indicator {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            font-weight: bold;
+            cursor: default; /* Indicate it's not clickable for action */
+            transition: background-color 0.1s ease-out; /* Smooth transition */
+        }
+        
+        .key-indicator.pressed {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border-color: #4CAF50;
+        }
+        
+        .key-indicator.not-pressed {
+            background-color: #f44336; /* Red */
+            color: white;
+            border-color: #f44336;
+        }
+        #counterDisplayFi {
+            margin-top: 20px;
+            font-size: 2em; /* Make the number larger */
+            font-weight: bold;
+            color: #333;
+        }
+        #counterDisplayXValue {
+            margin-top: 20px;
+            font-size: 2em; /* Make the number larger */
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+    <body>
+        <canvas id = "c"></canvas>
+        <h1>Keyboard Input and Number Counter Example</h1>
+
+        <p>Press '+' to increment, '-' to decrement. Also, use the toggle button.</p>
+
+        <div id="inputDisplay">Press a key...</div>
+
+        <div id="counterDisplayFi">f_i: 0</div>
+        <div id="counterDisplayXValue">X Velocity: 0</div>
+        <div id="counterDisplayTVValue">Theta Velocity: 0</div>
+        <div id="counterDisplayTAValue">Theta Acc: 0</div>
+
+        <div class="control-indicators">
+            <button id="wKeyIndicator" class="key-indicator">W</button>
+            <button id="aKeyIndicator" class="key-indicator">A</button>
+            <button id="sKeyIndicator" class="key-indicator">S</button>
+            <button id="dKeyIndicator" class="key-indicator">D</button>
+            <button id="spaceKeyIndicator" class="key-indicator">Space</button>
+            <button id="shiftKeyIndicator" class="key-indicator">Shift</button>
+        </div>
+
+    </body>
+    <script src = "main.js"></script>
+</html>

@@ -1,0 +1,9 @@
+This project uses the following libraries:
+
+- g++ (MinGW-w64): The C++ compiler.
+- OpenBLAS: A library for linear algebra.
+- Armadillo: A C++ library for linear algebra, which uses OpenBLAS.
+- GLFW: A library for creating windows and handling user input for OpenGL.
+- glad: A library for loading OpenGL functions.
+- OpenGL: The graphics API.
+- gdi32: The graphics driver library for Windows.

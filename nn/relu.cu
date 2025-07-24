@@ -1,9 +1,22 @@
-#include <cuda_bf16.h>
+#include "activations.h"
+
+// A more robust implementation for applying relu to a matrix
+__global__ void relu_all(float *matrix, int m, int n) {
+    int row = blockIdx.y * blockDim.y + threadIdx.y;
+    int col = blockIdx.x * blockDim.x + threadIdx.x;
+    int index = col * m + row;
+
+    if (row < m && col < n) {
+        if (matrix[index] < 0.0f) {
+            matrix[index] = 0.0f;
+        }
+    }
+}
 
 //performs the relu operation on the whole mxn matrix
 //assume each block is launched as 32 by 32 threads
 //assume enough blocks are launched to tile the whole matrix
-__global__ void relu_all(float *matrix, int m, int n){
+__global__ void relu_all_1D(float *matrix, int m, int n){
     int col = blockIdx.x % n / 32;
     int row = blockIdx.x * 32 / n;
 
@@ -14,7 +27,7 @@ __global__ void relu_all(float *matrix, int m, int n){
 //say it is a column major vector with 1024 elements per column
 //launch 1024 x threads per block
 //launch as many blocks in x as columns
-__global__ relu_vector(float *matrix_in float *matrix_out){
+__global__ void relu_vector(float *matrix_in float *matrix_out){
     int vector = 1024 * blockIdx.x;
     int t = threadIdx.x;
     __shared__ temp[1024] = {0};

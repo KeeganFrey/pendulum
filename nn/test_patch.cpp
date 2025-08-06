@@ -1,5 +1,5 @@
 #include <iostream>
-#include "patch.hpp"
+#include "patch.h"
 
 int main(){
     int image[9*16*3] = {0};

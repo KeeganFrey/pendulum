@@ -1,5 +1,5 @@
 #include "encoder.h"
-#include "matrix_ops.h" // Assuming your mmul_c is declared in here
+#include "matrix.h" // Assuming your mmul_c is declared in here
 #include "activations.h" // Assuming your relu_all is declared in here
 #include <iostream>
 #include <vector>
